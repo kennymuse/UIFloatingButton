@@ -19,9 +19,37 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+///
+
+-(UIViewController *) viewControllerForPresentFloatingButton:(UIFloatingButton *)button {
+    
+    return self;
+}
+
+-(NSUInteger) numberForRowInFloatingButton:(UIFloatingButton *)button {
+    
+    return 4;
+}
+
+-(NSString *) floatingButton:(UIFloatingButton *)button imageForRowAtIndex:(NSInteger)index {
+    
+    NSArray *imgs = @[@"twitter-icon", @"linkedin-icon", @"fb-icon", @"google-icon"];
+    return [imgs objectAtIndex:index];
+}
+
+-(NSString *) floatingButton:(UIFloatingButton *)button textForRowAtIndex:(NSInteger)index {
+    
+    NSArray *labels = @[@"Twitter", @"Linked in", @"Facebook", @"Google Plus"];
+    return [labels objectAtIndex:index];
+}
+
+-(UIFloatingButtonOrientation) orientationForPresentFloatingButton:(UIFloatingButton *)button {
+    return UIFloatingButtonOrientationTopRight;
+}
+
+-(void) floatingButton:(UIFloatingButton *)button clickedButtonAtIndex:(NSInteger)index {
+    
+    NSLog(@"UIFloatingButton clicked %tu", index);
 }
 
 @end

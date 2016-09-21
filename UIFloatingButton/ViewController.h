@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIFloatingButton.h"
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController <UIFloatingButtonDelegate>
 
 @end
 
